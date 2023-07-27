@@ -354,7 +354,7 @@
             // dtgMovie
             // 
             this.dtgMovie.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgMovie.Location = new System.Drawing.Point(17, 25);
+            this.dtgMovie.Location = new System.Drawing.Point(17, 15);
             this.dtgMovie.Name = "dtgMovie";
             this.dtgMovie.RowHeadersWidth = 62;
             this.dtgMovie.RowTemplate.Height = 28;
