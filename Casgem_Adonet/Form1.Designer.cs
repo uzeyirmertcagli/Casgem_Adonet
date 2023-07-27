@@ -31,7 +31,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnCategoryAdd = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnCategoryUpdate = new System.Windows.Forms.Button();
             this.btnCategoryList = new System.Windows.Forms.Button();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
@@ -51,14 +51,14 @@
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
+            this.btnMovieList = new System.Windows.Forms.Button();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.dtgMovie = new System.Windows.Forms.DataGridView();
             this.label6 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.label18 = new System.Windows.Forms.Label();
+            this.lblBestMovie = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label20 = new System.Windows.Forms.Label();
@@ -70,7 +70,7 @@
             this.label19 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label16 = new System.Windows.Forms.Label();
+            this.lblCategoryCount = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label17 = new System.Windows.Forms.Label();
@@ -91,7 +91,7 @@
             // 
             this.groupBox1.Controls.Add(this.btnDelete);
             this.groupBox1.Controls.Add(this.btnCategoryAdd);
-            this.groupBox1.Controls.Add(this.button2);
+            this.groupBox1.Controls.Add(this.btnCategoryUpdate);
             this.groupBox1.Controls.Add(this.btnCategoryList);
             this.groupBox1.Controls.Add(this.radioButton2);
             this.groupBox1.Controls.Add(this.radioButton1);
@@ -127,14 +127,15 @@
             this.btnCategoryAdd.UseVisualStyleBackColor = true;
             this.btnCategoryAdd.Click += new System.EventHandler(this.btnCategoryAdd_Click);
             // 
-            // button2
+            // btnCategoryUpdate
             // 
-            this.button2.Location = new System.Drawing.Point(321, 403);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(130, 55);
-            this.button2.TabIndex = 8;
-            this.button2.Text = "Kategori Güncelle";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnCategoryUpdate.Location = new System.Drawing.Point(321, 403);
+            this.btnCategoryUpdate.Name = "btnCategoryUpdate";
+            this.btnCategoryUpdate.Size = new System.Drawing.Size(130, 55);
+            this.btnCategoryUpdate.TabIndex = 8;
+            this.btnCategoryUpdate.Text = "Kategori Güncelle";
+            this.btnCategoryUpdate.UseVisualStyleBackColor = true;
+            this.btnCategoryUpdate.Click += new System.EventHandler(this.btnCategoryUpdate_Click);
             // 
             // btnCategoryList
             // 
@@ -230,7 +231,7 @@
             this.groupBox2.Controls.Add(this.button5);
             this.groupBox2.Controls.Add(this.button6);
             this.groupBox2.Controls.Add(this.button7);
-            this.groupBox2.Controls.Add(this.button8);
+            this.groupBox2.Controls.Add(this.btnMovieList);
             this.groupBox2.Controls.Add(this.textBox3);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.textBox4);
@@ -317,14 +318,15 @@
             this.button7.Text = "Film Güncelle";
             this.button7.UseVisualStyleBackColor = true;
             // 
-            // button8
+            // btnMovieList
             // 
-            this.button8.Location = new System.Drawing.Point(213, 377);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(130, 55);
-            this.button8.TabIndex = 7;
-            this.button8.Text = "Film Listesi";
-            this.button8.UseVisualStyleBackColor = true;
+            this.btnMovieList.Location = new System.Drawing.Point(213, 377);
+            this.btnMovieList.Name = "btnMovieList";
+            this.btnMovieList.Size = new System.Drawing.Size(130, 55);
+            this.btnMovieList.TabIndex = 7;
+            this.btnMovieList.Text = "Film Listesi";
+            this.btnMovieList.UseVisualStyleBackColor = true;
+            this.btnMovieList.Click += new System.EventHandler(this.btnMovieList_Click);
             // 
             // textBox3
             // 
@@ -370,21 +372,21 @@
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.label18);
+            this.panel3.Controls.Add(this.lblBestMovie);
             this.panel3.Controls.Add(this.label13);
             this.panel3.Location = new System.Drawing.Point(417, 26);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(162, 76);
             this.panel3.TabIndex = 13;
             // 
-            // label18
+            // lblBestMovie
             // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(70, 52);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(18, 20);
-            this.label18.TabIndex = 18;
-            this.label18.Text = "0";
+            this.lblBestMovie.AutoSize = true;
+            this.lblBestMovie.Location = new System.Drawing.Point(70, 52);
+            this.lblBestMovie.Name = "lblBestMovie";
+            this.lblBestMovie.Size = new System.Drawing.Size(18, 20);
+            this.lblBestMovie.TabIndex = 18;
+            this.lblBestMovie.Text = "0";
             // 
             // label13
             // 
@@ -478,21 +480,21 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.label16);
+            this.panel1.Controls.Add(this.lblCategoryCount);
             this.panel1.Controls.Add(this.label9);
             this.panel1.Location = new System.Drawing.Point(69, 26);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(162, 76);
             this.panel1.TabIndex = 14;
             // 
-            // label16
+            // lblCategoryCount
             // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(72, 52);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(18, 20);
-            this.label16.TabIndex = 16;
-            this.label16.Text = "0";
+            this.lblCategoryCount.AutoSize = true;
+            this.lblCategoryCount.Location = new System.Drawing.Point(72, 52);
+            this.lblCategoryCount.Name = "lblCategoryCount";
+            this.lblCategoryCount.Size = new System.Drawing.Size(18, 20);
+            this.lblCategoryCount.TabIndex = 16;
+            this.lblCategoryCount.Text = "0";
             // 
             // label9
             // 
@@ -546,6 +548,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgCategory)).EndInit();
@@ -580,7 +583,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnCategoryAdd;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnCategoryUpdate;
         private System.Windows.Forms.Button btnCategoryList;
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.GroupBox groupBox2;
@@ -593,7 +596,7 @@
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button btnMovieList;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox textBox4;
@@ -614,9 +617,9 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label lblBestMovie;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label lblCategoryCount;
     }
 }
 
