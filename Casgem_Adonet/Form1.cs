@@ -88,6 +88,18 @@ namespace Casgem_Adonet
             connection.Close();
             #endregion
 
+            #region
+            connection.Open();
+            SqlCommand command3 = new SqlCommand("Select * From TblCategory", connection);
+            SqlDataAdapter adapter = new SqlDataAdapter(command3);
+            DataTable dt = new DataTable();
+            adapter.Fill(dt);
+            cmbCategory.DisplayMember = "CategoryName";
+            cmbCategory.ValueMember = "CategoryID";
+            cmbCategory.DataSource = dt;
+            connection.Close();
+            #endregion
+
 
         }
 
@@ -99,7 +111,31 @@ namespace Casgem_Adonet
             DataTable dt = new DataTable(); 
             adapter.Fill(dt);
             dtgMovie.DataSource = dt;
-            
+            connection.Close();
+        }
+
+        private void btnMovieAdd_Click(object sender, EventArgs e)
+        {
+            connection.Open();
+            SqlCommand command = new SqlCommand("insert into TblMovie (MovieName,MovieImdb,MovieDuration,MovieCategory) values (@p1,@p2,@p3,@p4)", connection);
+            command.Parameters.AddWithValue("@p1", txtMovieName.Text);
+            command.Parameters.AddWithValue("@p2", txtMovieImdb.Text);
+            command.Parameters.AddWithValue("@p3", txtMovieTime.Text);
+            command.Parameters.AddWithValue("@p4", cmbCategory.SelectedValue);
+            command.ExecuteNonQuery();
+            MessageBox.Show("Film Başarılı Bir Şekilde Kaydedildi", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+            connection.Close() ;
+
+        }
+
+        private void btnMovieDelete_Click(object sender, EventArgs e)
+        {
+            connection.Open();
+            SqlCommand command = new SqlCommand("Delete From TblMovie Where MovieID=@p1", connection);
+            command.Parameters.AddWithValue("@p1", txtMovieID.Text);
+            command.ExecuteNonQuery ();
+            MessageBox.Show("Film Başarılı Bir Şekilde Silindi", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+            connection.Close();
         }
     }
 }
