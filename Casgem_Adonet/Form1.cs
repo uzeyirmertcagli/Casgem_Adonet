@@ -137,5 +137,20 @@ namespace Casgem_Adonet
             MessageBox.Show("Film Başarılı Bir Şekilde Silindi", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
             connection.Close();
         }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            connection.Open();
+            SqlCommand command = new SqlCommand("Update TblMovie Set MovieName=@p1,MovieImdb=@p2,MovieDuration=@p3,MovieCategory=@p4 where MovieID=@p5", connection);
+            command.Parameters.AddWithValue("@p1", txtMovieName.Text);
+            command.Parameters.AddWithValue("@p2", txtMovieImdb.Text);
+            command.Parameters.AddWithValue("@p3", txtMovieTime.Text);
+            command.Parameters.AddWithValue("@p4", cmbCategory.SelectedValue);
+            command.Parameters.AddWithValue("@p5", txtMovieID.Text);
+            command.ExecuteNonQuery();
+            MessageBox.Show("Film Başarılı Bir Şekilde Güncellendi", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+            connection.Close();
+
+        }
     }
 }

@@ -49,7 +49,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.btnMovieDelete = new System.Windows.Forms.Button();
             this.btnMovieAdd = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
             this.btnMovieList = new System.Windows.Forms.Button();
             this.txtMovieName = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -230,7 +230,7 @@
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.btnMovieDelete);
             this.groupBox2.Controls.Add(this.btnMovieAdd);
-            this.groupBox2.Controls.Add(this.button7);
+            this.groupBox2.Controls.Add(this.btnUpdate);
             this.groupBox2.Controls.Add(this.btnMovieList);
             this.groupBox2.Controls.Add(this.txtMovieName);
             this.groupBox2.Controls.Add(this.label5);
@@ -304,14 +304,15 @@
             this.btnMovieAdd.UseVisualStyleBackColor = true;
             this.btnMovieAdd.Click += new System.EventHandler(this.btnMovieAdd_Click);
             // 
-            // button7
+            // btnUpdate
             // 
-            this.button7.Location = new System.Drawing.Point(349, 438);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(130, 55);
-            this.button7.TabIndex = 8;
-            this.button7.Text = "Film Güncelle";
-            this.button7.UseVisualStyleBackColor = true;
+            this.btnUpdate.Location = new System.Drawing.Point(349, 438);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(130, 55);
+            this.btnUpdate.TabIndex = 8;
+            this.btnUpdate.Text = "Film Güncelle";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnMovieList
             // 
@@ -599,7 +600,7 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btnMovieDelete;
         private System.Windows.Forms.Button btnMovieAdd;
-        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnMovieList;
         private System.Windows.Forms.TextBox txtMovieName;
         private System.Windows.Forms.Label label5;
